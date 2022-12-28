@@ -1,0 +1,12 @@
+.contact-app {
+    display: grid;
+    grid-template-rows: auto auto 1fr;
+    position: relative;
+
+    .explore-sub-header {
+        display: flex;
+        align-items: center;
+        font-size: 1em;
+        padding-block: 15px;
+    }
+}

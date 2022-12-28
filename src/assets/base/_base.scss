@@ -1,0 +1,45 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Poppins, sans-serif;
+    color: #222222;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    // font-family: inherit;
+}
+
+input,
+textarea,
+button,
+a {
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+button {
+    cursor: pointer;
+    border: 0;
+    background-color: inherit;
+}
+
+a {
+    color: inherit;
+}
+
+#root {
+    min-height: 100vh;
+    display: grid;
+    position: relative;
+    grid-template-rows: auto 1fr;
+}

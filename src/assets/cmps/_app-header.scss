@@ -1,0 +1,29 @@
+.main-header {
+    background: linear-gradient(90deg, #9c5fff, #7251fd);
+    padding-block: 30px;
+    margin-bottom: 10px;
+
+    nav {
+        display: flex;
+        gap: 10px;
+    }
+
+    .logo {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        font-size: 1.5em;
+        letter-spacing: -1px;
+        gap: 5px;
+
+        img {
+            height: 32px;
+        }
+
+        @media (max-width: 650px) {
+            .main-container .logo-container {
+                display: none;
+            }
+        }
+    }
+}
