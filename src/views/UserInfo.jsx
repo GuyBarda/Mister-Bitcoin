@@ -1,9 +1,23 @@
-import { setLoggedInUser } from '../store/actions/user.actions';
+import { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
+import { bitcoinService } from '../services/bitcoin.service';
 
 export const UserInfo = (props) => {
-    const {
-        loggedInUser: { name, coins, moves },
-    } = props;
+    const [userBtc, setUserBtc] = useState(null);
+
+    const loggedInUser = useSelector((state) => state.userModule.loggedInUser);
+    useEffect(() => {
+        getRate();
+    }, [loggedInUser]);
+
+    const getRate = async () => {
+        const userBtc = await bitcoinService.getRate(loggedInUser?.coins);
+        setUserBtc(userBtc);
+    };
+
+    if (!loggedInUser) return <div className="">Please login first</div>;
+
+    const { name, coins, moves } = loggedInUser;
 
     return (
         <div className="user-info secondary-container">

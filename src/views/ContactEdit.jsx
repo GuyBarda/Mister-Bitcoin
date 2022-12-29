@@ -57,18 +57,23 @@ export const ContactEdit = () => {
     if (!contact) return;
     console.log(contact);
 
-    const { name, email, phone, img } = contact;
+    const { name, email, phone } = contact;
     return (
-        <section className="contact-edit secondary-container">
+        <section className="contact-edit-container secondary-container">
             <div className="contact-edit">
                 <h1>{contact._id ? 'Edit' : 'Add'} Contact</h1>
                 <div className="actions flex justify-between ">
-                    <NavLink to="/">Cancel</NavLink>
-                    <button type="submit" form="addcontact">
+                    <NavLink className="btn" to="/">
+                        Cancel
+                    </NavLink>
+                    <button className="btn" type="submit" form="addcontact">
                         Done
                     </button>
                 </div>
-                <img src={img} alt="no" />
+                <img
+                    src={`https://robohash.org/${contact._id}?set=set5`}
+                    alt={contact.name}
+                />
                 <form onSubmit={onAddContact} id="addcontact">
                     <input
                         onChange={handleChange}

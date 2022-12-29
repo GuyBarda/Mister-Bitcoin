@@ -5,6 +5,7 @@ import { LoginSignupModal } from './components/LoginSignupModal';
 import { ContactApp } from './views/ContactApp';
 import { ContactDetails } from './views/ContactDeatils';
 import { ContactEdit } from './views/ContactEdit';
+import { UserInfo } from './views/UserInfo';
 
 function App() {
     return (
@@ -17,6 +18,7 @@ function App() {
                 <Route path="/dashboard" element={<Chart />} />
                 <Route path="/login" element={<LoginSignupModal />} />
                 <Route path="/" element={<ContactApp />} />
+                <Route path="/user" element={<UserInfo />} />
             </Routes>
         </Router>
     );

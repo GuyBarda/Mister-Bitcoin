@@ -9,6 +9,7 @@ export const AppHeader = () => {
                     <Link to="/">Home</Link>
                     <Link to="/dashboard">Dashboard</Link>
                     <Link to="/login">Login</Link>
+                    <Link to="/user">User</Link>
                 </nav>
             </div>
         </header>

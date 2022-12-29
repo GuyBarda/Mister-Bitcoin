@@ -1,17 +1,19 @@
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { signup, login } from '../store/actions/user.actions';
+import { signup } from '../store/actions/user.actions';
 
 export const LoginSignupModal = () => {
     const [user, setUser] = useState({ name: '' });
     const navigate = useNavigate();
+    const dispatch = useDispatch();
 
     const handleChange = ({ target: { name, value } }) => {
         setUser((prevUser) => ({ ...prevUser, [name]: value }));
     };
 
     const onSignup = () => {
-        signup(user);
+        dispatch(signup(user));
         navigate('/');
     };
 
